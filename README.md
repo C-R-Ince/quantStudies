@@ -1,1 +1,1 @@
-# quantResearchJPMC
+# quantStudies
