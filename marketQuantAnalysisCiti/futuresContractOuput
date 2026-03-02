@@ -1,0 +1,12 @@
+Output of futures contract based on the parameters
+s = 1.2
+r = 0.02
+d = 0.01
+T = 0.5
+X = 1.25
+vol = 0.25
+
+Output:
+Cost of Carry:  1.2181
+Black-Scholes Call Price: 0.0656
+Monte Carlo Call Price: 0.0664
