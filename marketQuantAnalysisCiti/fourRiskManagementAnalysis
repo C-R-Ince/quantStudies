@@ -1,0 +1,44 @@
+Risk Management Analysis
+Scenario 1: Hedging Market Risk
+Lock in today’s futures price to protect against expected price increases.
+•	Eliminates upside price risk
+•	Provides cost certainty
+Buy call options on coffee futures.
+•	Protects against price increases
+•	Preserves benefit if prices fall
+•	Downside limited to option premium
+Buy a call and sell a put to reduce premium cost.
+•	Caps upside exposure
+•	Reduces hedge cost
+•	Balanced risk profile
+Scenario 2: Credit Risk with a New Supplier
+Use a bank-issued letter of credit.
+•	Transfers default risk to the bank
+•	Common in international trade
+•	Reduces counterparty risk
+Require Collateral or Advance Guarantees
+•	Partial prepayment structure
+•	Performance bonds
+•	Trade credit insurance
+Limit Exposure and Stagger Contracts
+•	Start with smaller contract size
+•	Use short-duration agreements
+•	Gradually increase exposure if reliability proven
+Scenario 3: Operational Risk in Trade Execution
+Automation of Trade Capture
+•	Implement electronic trading systems
+•	Straight-through processing (STP)
+•	Reduce manual input
+Segregation of Duties
+•	Separate trade execution
+•	Trade confirmation
+•	Settlement functions
+Prevents fraud and internal errors.
+Real-Time Reconciliation and Controls
+•	Automated reconciliation systems
+•	Exception reporting
+•	Daily P&L verification
+Staff Training and Control Reviews
+•	Regular compliance checks
+•	Operational audits
+•	Scenario-based testing
