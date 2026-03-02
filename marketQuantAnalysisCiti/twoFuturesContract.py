@@ -1,14 +1,72 @@
 import numpy as np
+import argparse
 from scipy.stats import norm
 
-s = 1.2
-r = 0.02
-d = 0.01
-T = 0.5
-X = 1.25
-vol = 0.25
-n_sim = 10000
+#Function to check decimalised percentage
+def decimalPercentage(value):
+    try:
+        value = float(value)
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"{value} is not a valid number")
+    
+    if not 0 <= value <= 1:
+        raise argparse.ArgumentTypeError(
+            f"{value} is not a decimalised percentage (must be between 0 and 1)"
+        )
+    return value
+    
+#Function to check for a positive float 
+def positiveStrict(value):
+    try:
+        value = float(value)
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"{value} is not a valid number")
+    if value <= 0:
+        raise argparse.ArgumentTypeError(f"{value} must be strictly positive")
+    return value
+    
+#Validates the rate
+def rateValidator(value):
+    try:
+        value = float(value)
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"{value} is not a valid number")
+    if not -1 <= value <= 1:
+        raise argparse.ArgumentTypeError(
+            f"{value} must be between -1 and 1 (decimal form)"
+        )
+    return value
 
+#Define arguments
+parser = argparse.ArgumentParser(description="NPricing commodities coffee")
+parser.add_argument("-s", "--spotPrice",
+                    required=True,
+                    type=positiveStrict,
+                    help="Current price of coffee")
+parser.add_argument("-r", "--rate",
+                    required=True,
+                    type=rateValidator,
+                    help="Current risk free rate as a decimalised percentage per annum")
+parser.add_argument("-d", "--storage",
+                    required=True,
+                    type=decimalPercentage,
+                    help="Current cost of storage as a decimalised percentage per annum")
+parser.add_argument("-T", "--timeToMaturity",
+                    required=True,
+                    type=positiveStrict,
+                    help="Time for contract to mature in months")
+parser.add_argument("-X", "--strikePrice",
+                    required=True,
+                    type=positiveStrict,
+                    help="Strike price for the commodity")
+parser.add_argument("-v", "--volatility",
+                    required=True,
+                    type=positiveFloat,
+                    help="Volitility as a decimilised percentage")
+
+#10000 simulations
+n_sim = 10000
+     
 #Cost of Carry
 def costOfCarry(s, r , d ,T):
     return s*np.exp((r+d)*T)
