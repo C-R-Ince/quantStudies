@@ -1,1 +1,44 @@
-Market Quantitative Analytics course answers from forage.com
+# Market Quantitative Analytics
+
+Exploring techniques and algorithms used in **Quantitative Analytics.**
+Answeres for the **Market Quantitative Analytics simulation** from forage.com
+
+## Overview
+This project explores the tasks in the **Market Quantitative Analytics simulation** from forage.com. The documents are:
+| Documents | Description |
+| :--- | :--- |
+| `twoFuturesContract.py` | Parameterised to accept user inputted values. Will calculate cost-of-carry, Black-Scholes Model, and Monte Carlo Simulations |
+| futuresContractOuput | Output of the `twoFuturesContract.py` given the values provided in the **Market Quantitative Analytics simulation** |
+| fourRiskManagementAnalysis | Methods for management of risk given varied situations |
+
+## Requirements
+'''
+python
+numpy
+scipy
+argparse
+'''
+
+## Example Usage
+```bash
+python twoFuturesContract.py \
+  --spotPrice <value> \
+  --rate <value> \
+  --storage <value> \
+  --timeToMaturity <value> \
+  --strikePrice <value> \
+  --volatility <value>
+```
+
+### Parameter Descriptions
+
+* `spotPrice` – Current price of coffee
+* `rate` – Current risk free rate as a decimalised percentage per annum
+* `storage` – Current cost of storage as a decimalised percentage per annum
+* `timeToMaturity` – Time for contract to mature in months
+* `strikePrice` – Strike price for the commodity
+* `volatility` – olitility as a decimilised percentage
+
+## Project Goals
+
+* Calculate the cost-of-carry, Black-Scholes, and Monte Carlo Simulation on user given values
