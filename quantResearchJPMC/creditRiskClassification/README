@@ -1,0 +1,65 @@
+# Loan Default Prediction
+
+Exploring methods for predicting loan default risk using machine learning and credit score categorisation.
+This project was completed as part of the **JPMorgan Chase Quantitative Research simulation** from Forage.
+
+## Overview
+
+This project investigates approaches to modelling loan default probability using borrower credit data. Two approaches are explored:
+
+* Random Forest modelling of default probability, parameterised to accept customer details.
+* Categorisation of FICO credit scores to analyse relationships with default risk.
+
+## Scripts
+
+| Script            | Description                                                                                                                                                  |
+| :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `threeDefProb.py` | Trains a Random Forest model to predict loan defaults and evaluates performance using AUC. Parameterised to accept customer details to generate predictions. |
+| `fourFicoBin.py`  | Bins FICO credit scores into categories to analyse their relationship with loan default risk.                                                                |
+
+## Methods
+
+**Model:** Random Forest classifier
+**Evaluation metric:** Area Under the ROC Curve (AUC)
+**Feature exploration:** Credit score binning (FICO categories)
+
+## Requirements
+
+* Loan data table from the JPMorgan Chase Quantitative Research simulation
+
+```python
+pandas
+numpy
+scikit-learn
+matplotlib
+```
+
+## Example Usage
+
+```bash
+python threeDefProb.py \
+  --credit_lines_outstanding <value> \
+  --loan_amt_outstanding <value> \
+  --total_debt_outstanding <value> \
+  --income <value> \
+  --years_employed <value> \
+  --fico_score <value>
+```
+
+```bash
+python fourFicoBin.py
+```
+
+### Parameter Descriptions
+
+* `credit_lines_outstanding` – Outstanding credit lines
+* `loan_amt_outstanding` – Remaining loan amount
+* `total_debt_outstanding` – Total outstanding debt
+* `income` – Annual income
+* `years_employed` – Total years of employment
+* `fico_score` – Borrower FICO credit score
+
+## Project Goals
+
+* Explore predictive modelling of loan defaults
+* Evaluate the usefulness of FICO score categorisation
